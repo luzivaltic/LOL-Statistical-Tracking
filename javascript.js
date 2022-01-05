@@ -359,6 +359,7 @@ const addBox = document.querySelector(".add-box");
 
 changeBox.addEventListener("click" , () => {
     addBox.classList.toggle("active");
+    changeBox.classList.toggle("active");
 })
 
 addGameBox.addEventListener("click" , () => {
@@ -379,4 +380,23 @@ allRes.forEach( (res) => {
             resBoxs[i].classList.add("active");
         })
     }
+})
+
+// remove current game
+
+const removeGame = document.querySelector(".remove-game");
+removeGame.addEventListener("click" , () => {
+    
+    gameData.csCounter.pop();
+    gameData.deathCounter.pop();
+    gameData.gameWon.pop();
+    gameData.macroCounter.pop();
+    
+    localStorage.removeItem("gameData");
+    localStorage.setItem( "gameData" , JSON.stringify(gameData) );
+
+    csChart.destroy();
+    deathChart.destroy();
+
+    displayData();
 })
