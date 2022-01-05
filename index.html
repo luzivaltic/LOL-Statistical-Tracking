@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOL Statistical Tracking</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://kit.fontawesome.com/778dc16880.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <div class="dashboard box">
+            <div class="character-icon">
+                <img src="./Season_2019_-_Split_2_profileicon.png" alt="">
+            </div>
+            <div class="name">
+                1st_Vua_ap
+            </div>
+            <div class="overall-static">
+                <div class="one-row game-played">
+                    <div class="content">Game played: </div>
+                    <div class="num">734</div>
+                </div>
+                <div class="one-row win-rate">
+                    <div class="content">Win rate: </div>
+                    <div class="num">52%</div>
+                </div>
+            </div>
+            <div class="time">
+                <div class="time-box">
+                    <div class="content">Past 10 games</div>
+                </div>
+                <div class="time-box">
+                    <div class="content">Past 25 games</div>
+                </div>
+                <div class="time-box">
+                    <div class="content">All</div>
+                </div>
+            </div>
+
+            <div class="change-box">
+                <div class="inner-box">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <div class="add-box box">
+                
+                <div class="input-box" >
+                    <div class="one-box">
+                        <form action="" class="CS-number" >
+                            <input type="number" class="CS-input" required>
+                            <label for="">CS number</label>
+                        </form>
+                    </div>
+                    <div class="one-box">
+                        <form action="" class="game-time" >
+                            <input type="number" required>
+                            <label for="">Game time</label>
+                        </form>
+                    </div>
+                    <div class="one-box">
+                        <form action="" class="CS-number" >
+                            <input type="number" class="death-count" required>
+                            <label for="">Death count</label>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="ques-check-box">
+                    <div class="content">
+                        Won game 
+                    </div>
+                    <div class="res">
+                        <div class="res-box yes">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="res-box no">
+                            <i class="fas fa-times"></i>                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ques-check-box">
+                    <div class="content">
+                        Early death 
+                    </div>
+                    <div class="res">
+                        <div class="res-box yes">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="res-box no">
+                            <i class="fas fa-times"></i>                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ques-check-box">
+                    <div class="content">
+                        Died to gank 
+                    </div>
+                    <div class="res">
+                        <div class="res-box yes">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="res-box no">
+                            <i class="fas fa-times"></i>                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ques-check-box">
+                    <div class="content">
+                        Played toward win condition 
+                    </div>
+                    <div class="res">
+                        <div class="res-box yes">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="res-box no">
+                            <i class="fas fa-times"></i>                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ques-check-box">
+                    <div class="content">
+                        Really bad play 
+                    </div>
+                    <div class="res">
+                        <div class="res-box yes">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="res-box no">
+                            <i class="fas fa-times"></i>                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ques-check-box">
+                    <div class="content">
+                        Really good play 
+                    </div>
+                    <div class="res">
+                        <div class="res-box yes">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="res-box no">
+                            <i class="fas fa-times"></i>                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ques-check-box">
+                    <div class="content">
+                        Win lane 
+                    </div>
+                    <div class="res">
+                        <div class="res-box yes">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="res-box no">
+                            <i class="fas fa-times"></i>                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-game-box"><span>+</span> Add game</div>
+            </div>
+        </div>
+
+        <div class="cs-static box chart">
+            <div class="chart-container">
+                <canvas id="cs-chart"></canvas>
+            </div>
+        </div>
+        <div class="death-static box chart">
+            <div class="chart-container">
+                <canvas id="death-chart" ></canvas>
+            </div>
+        </div>
+        <div class="macro-check-box box">
+            
+            <div class="macro-ques">
+                <div class="content">
+                    Early death :
+                </div>
+                <div class="result">
+                    <div class="relative-win-rate"> Win rate: <span>50%</span> </div>
+                    <div class="match-count">10 / 13</div>
+                </div>
+            </div>
+            <div class="macro-ques">
+                <div class="content">
+                    Died to gank :
+                </div>
+                <div class="result">
+                    <div class="relative-win-rate">Win rate: <span>50%</span> </div>
+                    <div class="match-count">10 / 13</div>
+                </div>
+            </div>
+            
+            <div class="macro-ques">
+                <div class="content">
+                    Played toward my win condition : 
+                </div>
+                <div class="result">
+                    <div class="relative-win-rate">Win rate: <span>50%</span> </div>
+                    <div class="match-count">10 / 13</div>
+                </div>
+            </div>
+            
+            <div class="macro-ques">
+                <div class="content">
+                    Really bad play : 
+                </div>
+                <div class="result">
+                    <div class="relative-win-rate">Win rate: <span>50%</span> </div>
+                    <div class="match-count">10 / 13</div>
+                </div>
+            </div>
+            
+            <div class="macro-ques">
+                <div class="content">
+                    Really good mechanically played :
+                </div>
+                <div class="result">
+                    <div class="relative-win-rate"> Win rate: <span>50%</span> </div>
+                    <div class="match-count">10 / 13</div>
+                </div>
+            </div>
+
+            <div class="macro-ques">
+                <div class="content">
+                    Win lane : 
+                </div>
+                <div class="result">
+                    <div class="relative-win-rate">Win rate: <span>50%</span> </div>
+                    <div class="match-count">10 / 13</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+<script src="./javascript.js"></script>
+
+</html>
