@@ -147,6 +147,10 @@ body {
   border-radius: 50%;
   z-index: 100;
   background-color: #1B1C22;
+  -webkit-transition: -webkit-transform 0.25s ease;
+  transition: -webkit-transform 0.25s ease;
+  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
 }
 
 .container .dashboard .change-box .inner-box {
@@ -177,6 +181,11 @@ body {
   color: #00d2ff;
 }
 
+.container .dashboard .change-box.active {
+  -webkit-transform: translate(calc( 50% + 10px), -50%) rotate(-180deg);
+          transform: translate(calc( 50% + 10px), -50%) rotate(-180deg);
+}
+
 .container .dashboard .add-box {
   position: absolute;
   width: 200%;
@@ -191,6 +200,7 @@ body {
   opacity: 0;
   pointer-events: none;
   padding: 30px;
+  padding-top: 20px;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
@@ -250,7 +260,7 @@ body {
 
 .container .dashboard .add-box .ques-check-box {
   position: relative;
-  margin-top: 15px;
+  margin-top: 10px;
   width: 100%;
   background-color: black;
   color: white;

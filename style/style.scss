@@ -156,7 +156,15 @@ body {
                     color: rgba(0,210,255,1);
                 }
             }
+
+            transition: transform 0.25s ease;
         }
+
+        .change-box.active {
+            transform: translate( calc( 50% + 10px ) ,-50%) rotate(-180deg);   
+        }
+
+        
 
         .add-box {
             position: absolute;
@@ -173,6 +181,7 @@ body {
             pointer-events: none; 
 
             padding: 30px;
+            padding-top: 20px;
             
 
             .input-box {
@@ -229,7 +238,7 @@ body {
 
             .ques-check-box {
                 position: relative;
-                margin-top: 15px;
+                margin-top: 10px;
                 width: 100%;
                 background-color: black;
                 color: white;
